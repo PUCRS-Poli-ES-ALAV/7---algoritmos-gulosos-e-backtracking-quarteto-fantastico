@@ -11,7 +11,7 @@ def bestChange(coins:List[int], value:int)->List[int]:
     
     try:
         while value > 0:
-            for i in coins:
+            for i in range(len(coins)):
                 if value >= coins[i]:
                     change.append(coins[i])
                     value -= coins[i]
@@ -19,7 +19,6 @@ def bestChange(coins:List[int], value:int)->List[int]:
                 elif value < coins[len(coins)-1]:
                     raise ValueError
             iterations += 1
-   
         print(f"Number of iterations: {iterations}")
         return change
     except ValueError:
